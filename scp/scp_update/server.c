@@ -78,6 +78,8 @@ int main(int argc, char *argv[])
                 perror("send judge error");
                 exit(1);
             }
+	    close(connfd);
+	    exit(1);
         }else{
             printf("\nstart transfering md5!\n");
             char cmd[BUFFSIZE] = "md5sum ";
