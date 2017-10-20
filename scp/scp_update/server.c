@@ -79,6 +79,7 @@ int main(int argc, char *argv[])
                 exit(1);
             }
 	    close(connfd);
+	    close(sockfd);
 	    exit(1);
         }else{
             printf("\nstart transfering md5!\n");
