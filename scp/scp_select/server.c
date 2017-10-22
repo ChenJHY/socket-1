@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
             for(i = 0; i < FD_SETSIZE; i++){
                 if(client[i] < 0){
                     client[i] = connfd;
-                    i++;  //（添加这句代码）原书这里面如果只有一个客户端连入，i并没有++，会造成下面的for循环无法进入（113行）
+                    i++;
                     break;
                 }
             }
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
             if(i > maxi){
                 maxi = i;
             }
-            if(--nready < 0){  //这里去掉了=号，如果不去掉，有一个客户端连入的话会先减，则会为0，条件成立执行continue，就不会向下执行for循环代码
+            if(--nready < 0){
                 continue;
             }
         }
