@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
         FD_SET(sockfd, &sock_set);
         FD_SET(sockfd, &write_set);
 
-        if((nready = select(maxfd+1, &sock_set, NULL, NULL, NULL)) < 0){
+        if((nready = select(maxfd+1, &sock_set, &write_set, NULL, NULL)) < 0){
             perror("select error");
             exit(1);
         }
