@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
             for(i = 0; i < FD_SETSIZE; i++){
                 if(client[i] < 0){
                     client[i] = connfd;
-                    i++;
+                    i++;  //可以注释，则113行改为注释的代码
                     break;
                 }
             }
@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
                 continue;
             }
         }
-        for(i = 0; i < maxi; i++){
+        for(i = 0; i < maxi; i++){  //for(i = 0; i <= maxi; i++){
             if(client[i] < 0){
                 continue;
             }
